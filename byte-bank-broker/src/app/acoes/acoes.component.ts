@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { AcoesAPI } from './modelo/acoes-api';
+import { AcoesService } from './services/acoes.service';
+import { Acoes } from './modelo/acoes';
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -6,8 +9,13 @@ import { FormControl } from '@angular/forms';
   templateUrl: './acoes.component.html',
   styleUrls: ['./acoes.component.css'],
 })
-export class AcoesComponent {
+export class AcoesComponent implements OnInit {
   acoesInput = new FormControl();
-
-  constructor() {}
+  acoes: Acoes;
+  constructor(private acoesService: AcoesService) {}
+  ngOnInit(): void {
+    this.acoesService.getAcoes().subscribe((acoes: AcoesAPI) => {
+      this.acoes = acoes.payload;
+    });
+  }
 }
