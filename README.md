@@ -1,2 +1,2 @@
-# angular-rxjs-training
-Explorar o rxjs
+# alura_angular_rxjs_1
+Curso
