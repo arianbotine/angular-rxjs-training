@@ -12,10 +12,10 @@ import { FormControl } from '@angular/forms';
 export class AcoesComponent implements OnInit {
   acoesInput = new FormControl();
   acoes: Acoes;
-  constructor(private acoesService: AcoesService) {}
+  constructor(private acoesService: AcoesService) { }
   ngOnInit(): void {
-    this.acoesService.getAcoes().subscribe((acoes: AcoesAPI) => {
-      this.acoes = acoes.payload;
+    this.acoesService.getAcoes().subscribe((acoes: Acoes) => {
+      this.acoes = acoes;
     });
   }
 }
