@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AcoesAPI } from '../modelo/acoes-api';
 import { map, pluck, tap } from 'rxjs/operators'
 import { Acao } from '../modelo/acao';
 
