@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "api": "node ./api/server.js",
+    "all": "concurrently \"npm run api\" \"npm run start\""
   },
   "private": true,
   "dependencies": {
